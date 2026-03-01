@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #0A1628;
+  --navy-light: #112040;
+  --gold: #C9A84C;
+  --gold-light: #D4B86A;
+  --gold-dark: #A8872E;
+  --white: #FFFFFF;
+  --cream: #F8F7F4;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font-noto), "Noto Sans JP", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), "Playfair Display", serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A84C, #D4B86A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+/* Hover utilities for server components */
+.btn-gold {
+  background-color: #C9A84C;
+  color: #0A1628;
+  transition: background-color 0.2s;
+}
+.btn-gold:hover {
+  background-color: #D4B86A;
+}
+.btn-navy {
+  background-color: #0A1628;
+  color: white;
+  transition: background-color 0.2s;
+}
+.btn-navy:hover {
+  background-color: #112040;
+}
+.btn-outline-gold {
+  border: 1px solid #C9A84C;
+  color: #C9A84C;
+  transition: all 0.2s;
+}
+.btn-outline-gold:hover {
+  background-color: #C9A84C;
+  color: #0A1628;
+}
+.btn-outline-white {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  transition: all 0.2s;
+}
+.btn-outline-white:hover {
+  border-color: #C9A84C;
+  color: #C9A84C;
 }
