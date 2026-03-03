@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const LINE_URL = "https://lin.ee/XXXXXXX"; // TODO: 実際のLINE URLに変更
+const LINE_URL = "https://lin.ee/AJiB8h6";
 
 const problems = [
   {
