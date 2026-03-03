@@ -81,9 +81,10 @@ export default function Hero() {
           {/* Stats */}
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 pt-8" style={{ borderTop: "1px solid #C9A84C20" }}>
             {[
-              { value: "2名", label: "慶應医学部現役生による創設" },
-              { value: "塾なし", label: "難関医学部合格の実績" },
-              { value: "完全", label: "オーダーメイドカリキュラム" },
+              { value: "1対1", label: "完全個別指導" },
+              { value: "全国", label: "オンライン受講対応" },
+              { value: "全科目", label: "英数理・小論文・面接" },
+              { value: "無料", label: "相談・入塾前体験" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="font-playfair text-3xl font-bold" style={{ color: "#C9A84C" }}>

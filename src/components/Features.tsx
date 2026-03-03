@@ -3,7 +3,7 @@ const features = [
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+          d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       </svg>
     ),
     title: "塾なし難関医学部合格の現役医学生が直接指導",
@@ -32,6 +32,39 @@ const features = [
     description:
       "Zoomを使ったオンライン指導と、対面指導の両方に対応しています。全国どこからでも受講でき、首都圏の方は対面での指導も選択可能。あなたのライフスタイルに合わせて柔軟に対応します。",
   },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+    title: "毎回の授業後レポートと質問対応",
+    description:
+      "授業が終わるたびに、その日の内容・次回までの課題・注意点をまとめたレポートを送付します。授業外の疑問はLINEで平日いつでも質問でき、学習の空白時間をなくします。",
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
+    title: "模試・定期テストの結果分析と改善",
+    description:
+      "模試や定期テストの結果を一緒に分析し、カリキュラムを随時アップデートします。「やりっぱなし」にせず、データに基づいて学習計画を常に最適化することで、着実に実力を伸ばします。",
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
+    title: "小論文・面接まで一貫サポート",
+    description:
+      "学科試験だけでなく、医学部特有の小論文・面接対策も一貫して対応します。医療倫理・時事問題の解説から模擬面接まで、現役医学生ならではの視点で実践的に指導します。",
+  },
 ];
 
 export default function Features() {
@@ -49,11 +82,11 @@ export default function Features() {
             className="font-playfair text-3xl md:text-4xl font-bold"
             style={{ color: "#0A1628" }}
           >
-            医進ラボが選ばれる3つの理由
+            医進ラボが選ばれる理由
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, idx) => (
             <div
               key={idx}

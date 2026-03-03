@@ -3,6 +3,8 @@ import Features from "@/components/Features";
 import Courses from "@/components/Courses";
 import Founders from "@/components/Founders";
 import Methodology from "@/components/Methodology";
+import FlowSection from "@/components/FlowSection";
+import VoiceSection from "@/components/VoiceSection";
 import ConsultationBanner from "@/components/ConsultationBanner";
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
       <Features />
       <Founders />
       <Methodology />
+      <FlowSection />
+      <VoiceSection />
       <Courses />
       <ConsultationBanner />
     </>
