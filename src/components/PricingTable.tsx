@@ -5,37 +5,60 @@ const plans = [
     name: "個別指導 週1回プラン",
     price: "¥44,000",
     unit: "/ 月",
-    description: "週1回（月4回）の個別指導。副教科の補強や特定科目の強化に最適です。",
-    features: ["個別授業 月4回（各60分）", "月次学習レポート", "LINE質問対応（平日）", "授業録画データ"],
+    description: "週1回（月4回）の個別指導。特定科目の強化・受験対策の入口として最適です。",
+    features: [
+      "個別授業 月4回（各60〜90分）",
+      "オンライン・対面どちらも選択可",
+      "完全オーダーメイドカリキュラム",
+      "月次学習レポート",
+      "LINE質問対応（平日）",
+    ],
     highlighted: false,
-    cta: "このプランで相談",
+    cta: "このプランで相談する",
   },
   {
     name: "個別指導 週2回プラン",
     price: "¥82,000",
     unit: "/ 月",
-    description: "週2回（月8回）の個別指導。受験学年の総合力強化・弱点克服に最適です。",
-    features: ["個別授業 月8回（各60分）", "月次学習レポート", "LINE質問対応（平日）", "授業録画データ", "模試分析サポート"],
+    description: "週2回（月8回）の個別指導。受験学年の総合力強化・弱点克服に最適なメインプランです。",
+    features: [
+      "個別授業 月8回（各60〜90分）",
+      "オンライン・対面どちらも選択可",
+      "完全オーダーメイドカリキュラム",
+      "月次学習レポート",
+      "LINE質問対応（平日）",
+      "模試分析・フィードバック",
+    ],
     highlighted: true,
-    cta: "このプランで相談",
+    cta: "このプランで相談する",
   },
   {
     name: "小論文 特訓プラン",
     price: "¥33,000",
     unit: "/ 月",
-    description: "月2回の小論文指導＋添削サービス。個別指導との併用もおすすめです。",
-    features: ["小論文指導 月2回（各60分）", "無制限添削（月4本まで）", "医療倫理テーマ解説資料", "フィードバックシート提供"],
+    description: "月2回の小論文指導＋添削サービス。個別指導コースとの併用もおすすめです。",
+    features: [
+      "小論文指導 月2回（各60分）",
+      "オンライン・対面どちらも選択可",
+      "無制限添削（月4本まで）",
+      "医療倫理テーマ解説資料",
+    ],
     highlighted: false,
-    cta: "このプランで相談",
+    cta: "このプランで相談する",
   },
   {
     name: "面接対策 集中プラン",
     price: "¥27,500",
     unit: "/ 回",
     description: "試験直前の集中面接対策。模擬面接＋フィードバック付きのスポット受講も可能。",
-    features: ["模擬面接（90分）", "大学別傾向レポート", "改善ポイントフィードバック", "追加練習問題リスト"],
+    features: [
+      "模擬面接（90分）",
+      "オンライン・対面どちらも選択可",
+      "大学別傾向レポート",
+      "改善ポイントフィードバック",
+    ],
     highlighted: false,
-    cta: "このプランで相談",
+    cta: "このプランで相談する",
   },
 ];
 
@@ -51,7 +74,7 @@ export default function PricingTable() {
             料金プラン
           </h2>
           <p className="text-sm" style={{ color: "#6B6560" }}>
-            全プラン入塾金・教材費込み。最初の1ヶ月は返金保証付きです。
+            全プラン入塾金・教材費込み。オンライン・対面どちらも同料金でご受講いただけます。
           </p>
         </div>
 
@@ -108,8 +131,19 @@ export default function PricingTable() {
           ))}
         </div>
 
-        <p className="text-center text-xs mt-8" style={{ color: "#6B6560" }}>
-          ※ 料金は税込表示です。複数コースの組み合わせや、長期割引プランも別途ご相談ください。
+        <div
+          className="mt-10 rounded-xl p-6 text-center"
+          style={{ backgroundColor: "#0A1628", border: "1px solid #C9A84C30" }}
+        >
+          <p className="text-white/80 text-sm mb-1">料金・プランについてご不明な点は、まずお気軽にご相談ください。</p>
+          <p className="text-white/50 text-xs mb-4">複数コースの組み合わせや、長期割引プランも別途ご相談いただけます。</p>
+          <Link href="/contact" className="btn-gold inline-flex items-center gap-2 px-6 py-3 font-bold rounded-lg text-sm">
+            無料相談はこちら →
+          </Link>
+        </div>
+
+        <p className="text-center text-xs mt-6" style={{ color: "#6B6560" }}>
+          ※ 料金は税込表示です。
         </p>
       </div>
     </section>
