@@ -1,4 +1,36 @@
 import Link from "next/link";
+import Image from "next/image";
+import fs from "fs";
+import path from "path";
+
+function founderImageExists(filename: string) {
+  try {
+    return fs.existsSync(path.join(process.cwd(), `public/images/${filename}`));
+  } catch {
+    return false;
+  }
+}
+
+function FounderPhoto({ filename, label }: { filename: string; label: string }) {
+  const exists = founderImageExists(filename);
+  return (
+    <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 mb-5"
+      style={{ border: "2px solid #C9A84C40" }}>
+      {exists ? (
+        <Image src={`/images/${filename}`} alt={label} width={80} height={80}
+          className="w-full h-full object-cover" />
+      ) : (
+        <div className="w-full h-full flex items-center justify-center"
+          style={{ backgroundColor: "#0A1628" }}>
+          <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#C9A84C40">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+      )}
+    </div>
+  );
+}
 
 const LINE_URL = "https://lin.ee/AJiB8h6";
 
@@ -66,11 +98,12 @@ export default function Founders() {
           >
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5"
               style={{ backgroundImage: "radial-gradient(circle, #C9A84C 0%, transparent 70%)" }} />
-            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-6"
+            <FounderPhoto filename="founder-a.jpg" label="講師A" />
+            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 A
             </div>
-            <h3 className="font-playfair text-2xl font-bold text-white mb-3">
+            <h3 className="font-klee text-2xl font-semibold text-white mb-3">
               塾なしで<span style={{ color: "#C9A84C" }}>慶應医学部特待</span>合格
             </h3>
             <p className="text-white/50 text-sm mb-1">慶應義塾大学医学部（特待生）</p>
@@ -89,11 +122,12 @@ export default function Founders() {
           >
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5"
               style={{ backgroundImage: "radial-gradient(circle, #C9A84C 0%, transparent 70%)" }} />
-            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-6"
+            <FounderPhoto filename="founder-b.jpg" label="講師B" />
+            <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 B
             </div>
-            <h3 className="font-playfair text-2xl font-bold text-white mb-3">
+            <h3 className="font-klee text-2xl font-semibold text-white mb-3">
               <span style={{ color: "#C9A84C" }}>私立医学部全勝</span>・慶應医学部合格
             </h3>
             <p className="text-white/50 text-sm mb-1">慶應義塾大学医学部</p>

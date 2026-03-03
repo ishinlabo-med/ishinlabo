@@ -35,6 +35,10 @@ body {
   font-family: var(--font-playfair), "Playfair Display", serif;
 }
 
+.font-klee {
+  font-family: var(--font-klee), "Klee One", cursive;
+}
+
 .text-gold-gradient {
   background: linear-gradient(135deg, #C9A84C, #D4B86A);
   -webkit-background-clip: text;

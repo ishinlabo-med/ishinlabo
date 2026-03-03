@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Playfair_Display } from "next/font/google";
+import { Noto_Sans_JP, Playfair_Display, Klee_One } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -15,6 +15,13 @@ const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
+  display: "swap",
+});
+
+const kleeOne = Klee_One({
+  variable: "--font-klee",
+  subsets: ["latin"],
+  weight: ["400", "600"],
   display: "swap",
 });
 
@@ -42,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSansJP.variable} ${playfairDisplay.variable}`}>
+    <html lang="ja" className={`${notoSansJP.variable} ${playfairDisplay.variable} ${kleeOne.variable}`}>
       <body className="antialiased">
         <Header />
         <main>{children}</main>
