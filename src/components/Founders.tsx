@@ -1,24 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import fs from "fs";
-import path from "path";
+import { findImage } from "@/lib/imageHelper";
 
-function founderImageExists(filename: string) {
-  try {
-    return fs.existsSync(path.join(process.cwd(), `public/images/${filename}`));
-  } catch {
-    return false;
-  }
-}
-
-function FounderPhoto({ filename, label }: { filename: string; label: string }) {
-  const exists = founderImageExists(filename);
+function FounderPhoto({ basename, label }: { basename: string; label: string }) {
+  const src = findImage(basename);
   return (
     <div className="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 mb-5"
       style={{ border: "2px solid #C9A84C40" }}>
-      {exists ? (
-        <Image src={`/images/${filename}`} alt={label} width={80} height={80}
-          className="w-full h-full object-cover" />
+      {src ? (
+        <Image src={src} alt={label} width={80} height={80}
+          className="w-full h-full object-cover object-top" />
       ) : (
         <div className="w-full h-full flex items-center justify-center"
           style={{ backgroundColor: "#0A1628" }}>
@@ -98,7 +89,7 @@ export default function Founders() {
           >
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5"
               style={{ backgroundImage: "radial-gradient(circle, #C9A84C 0%, transparent 70%)" }} />
-            <FounderPhoto filename="founder-a.jpg" label="講師A" />
+            <FounderPhoto basename="founder-a" label="講師A" />
             <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 A
@@ -122,7 +113,7 @@ export default function Founders() {
           >
             <div className="absolute top-0 right-0 w-32 h-32 opacity-5"
               style={{ backgroundImage: "radial-gradient(circle, #C9A84C 0%, transparent 70%)" }} />
-            <FounderPhoto filename="founder-b.jpg" label="講師B" />
+            <FounderPhoto basename="founder-b" label="講師B" />
             <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 B

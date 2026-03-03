@@ -1,26 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
-import fs from "fs";
-import path from "path";
-
-// 画像ファイルが存在するか確認（存在しない場合はプレースホルダーを表示）
-function heroImageExists() {
-  try {
-    return fs.existsSync(path.join(process.cwd(), "public/images/hero-bg.jpg"));
-  } catch {
-    return false;
-  }
-}
+import { findImage } from "@/lib/imageHelper";
 
 export default function Hero() {
-  const hasImage = heroImageExists();
+  const heroImage = findImage("hero-bg");
 
   return (
     <section
       className="relative min-h-[95vh] flex items-center overflow-hidden"
       style={{ backgroundColor: "#0A1628" }}
     >
-      {/* Background glow */}
       <div
         className="absolute inset-0 opacity-10"
         style={{
@@ -34,7 +23,6 @@ export default function Hero() {
 
           {/* Left: Text */}
           <div>
-            {/* Badges */}
             <div className="flex flex-wrap gap-3 mb-8">
               <div
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase"
@@ -51,7 +39,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Headline */}
             <h1 className="font-klee text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight mb-6">
               医学部合格は、<br />
               <span style={{ color: "#C9A84C" }}>才能ではなく</span><br />
@@ -88,7 +75,6 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Stats */}
             <div className="flex flex-wrap gap-8 pt-8" style={{ borderTop: "1px solid #C9A84C20" }}>
               {[
                 { value: "1対1", label: "完全個別指導" },
@@ -109,49 +95,28 @@ export default function Hero() {
           {/* Right: Image */}
           <div className="hidden lg:flex items-center justify-center">
             <div className="relative w-full max-w-md">
-              {/* Decorative ring */}
-              <div
-                className="absolute -inset-4 rounded-3xl opacity-20"
-                style={{ border: "1px solid #C9A84C" }}
-              />
-              <div
-                className="absolute -inset-8 rounded-3xl opacity-10"
-                style={{ border: "1px solid #C9A84C" }}
-              />
+              <div className="absolute -inset-4 rounded-3xl opacity-20" style={{ border: "1px solid #C9A84C" }} />
+              <div className="absolute -inset-8 rounded-3xl opacity-10" style={{ border: "1px solid #C9A84C" }} />
 
-              {hasImage ? (
+              {heroImage ? (
                 <Image
-                  src="/images/hero-bg.jpg"
-                  alt="医進ラボ 学習風景"
+                  src={heroImage}
+                  alt="医進ラボ オンライン指導の様子"
                   width={480}
-                  height={560}
+                  height={600}
                   className="rounded-2xl object-cover w-full"
                   style={{ aspectRatio: "4/5" }}
                   priority
                 />
               ) : (
-                /* 画像プレースホルダー — hero-bg.jpg を追加すると自動で差し替わります */
                 <div
                   className="rounded-2xl flex flex-col items-center justify-center text-center p-10"
-                  style={{
-                    aspectRatio: "4/5",
-                    background: "linear-gradient(145deg, #112040 0%, #0A1628 100%)",
-                    border: "1px dashed #C9A84C40",
-                  }}
+                  style={{ aspectRatio: "4/5", background: "linear-gradient(145deg, #112040 0%, #0A1628 100%)", border: "1px dashed #C9A84C40" }}
                 >
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: "#C9A84C15" }}>
-                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#C9A84C40">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <p className="text-xs" style={{ color: "#C9A84C40" }}>
-                    public/images/hero-bg.jpg<br />を追加すると表示されます
-                  </p>
+                  <p className="text-xs" style={{ color: "#C9A84C40" }}>public/images/hero-bg.jpg を追加すると表示されます</p>
                 </div>
               )}
 
-              {/* Floating badge */}
               <div
                 className="absolute -bottom-4 -left-4 px-4 py-3 rounded-xl shadow-xl"
                 style={{ backgroundColor: "#0A1628", border: "1px solid #C9A84C40" }}
