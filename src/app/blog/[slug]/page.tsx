@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-slate max-w-none">
+          <div className="blog-content">
             <MDXRemote source={post.content} />
           </div>
         </div>
