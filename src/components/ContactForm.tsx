@@ -94,13 +94,13 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
         <div>
-          <label style={labelStyle}>お名前 <span style={{ color: "#C9A84C" }}>*</span></label>
+          <label style={labelStyle}>お名前 <span style={{ fontSize: "0.7rem", color: "#C9A84C", border: "1px solid #C9A84C", borderRadius: "3px", padding: "0 4px", marginLeft: "4px" }}>必須</span></label>
           <input type="text" placeholder="山田 太郎" style={inputBase}
             {...register("name", { required: "お名前を入力してください" })} />
           {errors.name && <p style={errorStyle}>{errors.name.message}</p>}
         </div>
         <div>
-          <label style={labelStyle}>メールアドレス <span style={{ color: "#C9A84C" }}>*</span></label>
+          <label style={labelStyle}>メールアドレス <span style={{ fontSize: "0.7rem", color: "#C9A84C", border: "1px solid #C9A84C", borderRadius: "3px", padding: "0 4px", marginLeft: "4px" }}>必須</span></label>
           <input type="email" placeholder="example@email.com" style={inputBase}
             {...register("email", { required: "メールアドレスを入力してください" })} />
           {errors.email && <p style={errorStyle}>{errors.email.message}</p>}
@@ -110,7 +110,7 @@ export default function ContactForm() {
           <input type="tel" placeholder="090-0000-0000" style={inputBase} {...register("phone")} />
         </div>
         <div>
-          <label style={labelStyle}>学年・状況 <span style={{ color: "#C9A84C" }}>*</span></label>
+          <label style={labelStyle}>学年・状況 <span style={{ fontSize: "0.7rem", color: "#C9A84C", border: "1px solid #C9A84C", borderRadius: "3px", padding: "0 4px", marginLeft: "4px" }}>必須</span></label>
           <select style={{ ...inputBase, cursor: "pointer" }}
             {...register("grade", { required: "学年・状況を選択してください" })}>
             {gradeOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -118,7 +118,7 @@ export default function ContactForm() {
           {errors.grade && <p style={errorStyle}>{errors.grade.message}</p>}
         </div>
         <div>
-          <label style={labelStyle}>ご興味のあるコース <span style={{ color: "#C9A84C" }}>*</span></label>
+          <label style={labelStyle}>ご興味のあるコース <span style={{ fontSize: "0.7rem", color: "#C9A84C", border: "1px solid #C9A84C", borderRadius: "3px", padding: "0 4px", marginLeft: "4px" }}>必須</span></label>
           <select style={{ ...inputBase, cursor: "pointer" }}
             {...register("course", { required: "コースを選択してください" })}>
             {courseOptions.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
@@ -126,7 +126,7 @@ export default function ContactForm() {
           {errors.course && <p style={errorStyle}>{errors.course.message}</p>}
         </div>
         <div>
-          <label style={labelStyle}>お問い合わせ内容 <span style={{ color: "#C9A84C" }}>*</span></label>
+          <label style={labelStyle}>お問い合わせ内容 <span style={{ fontSize: "0.7rem", color: "#C9A84C", border: "1px solid #C9A84C", borderRadius: "3px", padding: "0 4px", marginLeft: "4px" }}>必須</span></label>
           <textarea rows={5} placeholder="現在の状況や志望校、ご質問などをご記入ください。"
             style={{ ...inputBase, resize: "vertical" as const }}
             {...register("message", { required: "お問い合わせ内容を入力してください" })} />
