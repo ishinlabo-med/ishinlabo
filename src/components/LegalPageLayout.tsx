@@ -1,4 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 
 type Props = {
   title: string;
@@ -16,8 +17,8 @@ export default function LegalPageLayout({ title, content }: Props) {
 
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-sm max-w-none" style={{ color: "#2D2A24" }}>
-            <MDXRemote source={content} />
+          <div className="legal-content">
+            <MDXRemote source={content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
           </div>
         </div>
       </section>
