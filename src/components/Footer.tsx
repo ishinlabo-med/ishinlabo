@@ -71,9 +71,10 @@ export default function Footer() {
           <p className="text-white/40 text-xs">
             © {currentYear} 医進ラボ. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-white/40">
-            <span>プライバシーポリシー</span>
-            <span>利用規約</span>
+          <div className="flex flex-wrap gap-6 text-xs text-white/40">
+            <Link href="/tokushoho" className="hover:text-white/70 transition-colors">特定商取引法</Link>
+            <Link href="/privacy" className="hover:text-white/70 transition-colors">プライバシーポリシー</Link>
+            <Link href="/terms" className="hover:text-white/70 transition-colors">利用規約</Link>
           </div>
         </div>
       </div>

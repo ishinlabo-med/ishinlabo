@@ -1,4 +1,5 @@
 import Link from "next/link";
+import coursesData from "@/content/courses.json";
 
 export default function Courses() {
   return (
@@ -41,12 +42,10 @@ export default function Courses() {
                 Medical Individual Coaching
               </p>
               <h3 className="font-playfair text-3xl font-bold text-white mb-4">
-                個別指導コース
+                {coursesData[0].title}
               </h3>
               <p className="text-white/70 text-sm leading-relaxed mb-6">
-                医進ラボの核となるコース。現役慶應医学部生が1対1で完全個別指導を行います。
-                あなたの現状を徹底分析し、志望校合格に向けた完全オーダーメイドカリキュラムを設計。
-                毎回の授業で弱点を潰し、合格まで伴走します。
+                {coursesData[0].description}
               </p>
               <div className="flex gap-3">
                 <span
@@ -72,16 +71,7 @@ export default function Courses() {
             <div className="px-10 py-10 bg-white flex flex-col justify-center">
               <h4 className="font-semibold text-sm mb-4" style={{ color: "#0A1628" }}>含まれる内容</h4>
               <ul className="space-y-3 mb-8">
-                {[
-                  "現状分析・弱点の徹底洗い出し",
-                  "完全オーダーメイドカリキュラム設計",
-                  "1対1の個別授業（週1〜複数回）",
-                  "全科目対応（英数理・小論文・面接）",
-                  "志望校別の傾向・対策",
-                  "模試分析・フィードバック",
-                  "毎回の授業後レポート",
-                  "授業外の質問対応",
-                ].map((item, i) => (
+                {coursesData[0].features.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#0A1628" }}>
                     <span className="mt-0.5 font-bold" style={{ color: "#C9A84C" }}>✓</span>
                     {item}
@@ -107,20 +97,7 @@ export default function Courses() {
 
         {/* Sub Courses */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              title: "小論文特訓コース",
-              subtitle: "Essay Intensive",
-              description: "医学部特有の小論文・総合問題に特化したコース。医療倫理・時事論述・構成力を集中トレーニングします。個別指導コースとの併用も可能です。",
-              features: ["医療系テーマ特化", "添削・解説指導", "過去問演習", "オンライン・対面両対応"],
-            },
-            {
-              title: "面接対策コース",
-              subtitle: "Interview Prep",
-              description: "医学部面接の本質を知る現役医学生が直接指導。志望動機から倫理問題まで、本番さながらの練習を繰り返します。個別指導コースとの併用も可能です。",
-              features: ["現役医学生による指導", "大学別傾向分析", "模擬面接", "オンライン・対面両対応"],
-            },
-          ].map((course, idx) => (
+          {coursesData.slice(1).map((course, idx) => (
             <div
               key={idx}
               className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"

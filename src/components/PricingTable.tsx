@@ -1,66 +1,7 @@
 import Link from "next/link";
+import plansData from "@/content/pricing.json";
 
-const plans = [
-  {
-    name: "個別指導 週1回プラン",
-    price: "¥44,000",
-    unit: "/ 月",
-    description: "週1回（月4回）の個別指導。特定科目の強化・受験対策の入口として最適です。",
-    features: [
-      "個別授業 月4回（各60〜90分）",
-      "オンライン・対面どちらも選択可",
-      "完全オーダーメイドカリキュラム",
-      "月次学習レポート",
-      "LINE質問対応（平日）",
-    ],
-    highlighted: false,
-    cta: "このプランで相談する",
-  },
-  {
-    name: "個別指導 週2回プラン",
-    price: "¥82,000",
-    unit: "/ 月",
-    description: "週2回（月8回）の個別指導。受験学年の総合力強化・弱点克服に最適なメインプランです。",
-    features: [
-      "個別授業 月8回（各60〜90分）",
-      "オンライン・対面どちらも選択可",
-      "完全オーダーメイドカリキュラム",
-      "月次学習レポート",
-      "LINE質問対応（平日）",
-      "模試分析・フィードバック",
-    ],
-    highlighted: true,
-    cta: "このプランで相談する",
-  },
-  {
-    name: "小論文 特訓プラン",
-    price: "¥33,000",
-    unit: "/ 月",
-    description: "月2回の小論文指導＋添削サービス。個別指導コースとの併用もおすすめです。",
-    features: [
-      "小論文指導 月2回（各60分）",
-      "オンライン・対面どちらも選択可",
-      "無制限添削（月4本まで）",
-      "医療倫理テーマ解説資料",
-    ],
-    highlighted: false,
-    cta: "このプランで相談する",
-  },
-  {
-    name: "面接対策 集中プラン",
-    price: "¥27,500",
-    unit: "/ 回",
-    description: "試験直前の集中面接対策。模擬面接＋フィードバック付きのスポット受講も可能。",
-    features: [
-      "模擬面接（90分）",
-      "オンライン・対面どちらも選択可",
-      "大学別傾向レポート",
-      "改善ポイントフィードバック",
-    ],
-    highlighted: false,
-    cta: "このプランで相談する",
-  },
-];
+const plans = plansData;
 
 export default function PricingTable() {
   return (

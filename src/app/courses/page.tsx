@@ -2,84 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PricingTable from "@/components/PricingTable";
 import ConsultationBanner from "@/components/ConsultationBanner";
+import courseDetails from "@/content/courses.json";
 
 export const metadata: Metadata = {
   title: "コース・料金",
   description: "医進ラボのコース一覧と料金表。個別指導コースをメインに、小論文・面接対策も対応。オンライン・対面両対応の医学部受験専門個別指導塾。",
 };
-
-const courseDetails = [
-  {
-    id: "individual",
-    title: "個別指導コース",
-    subtitle: "Medical Individual Coaching",
-    badge: "メインコース",
-    badgeHighlight: true,
-    description: "医進ラボの核となるコースです。塾なしで慶應医学部特待・私立医学部全勝を果たした現役慶應医学部生2名が、完全1対1で個別指導を行います。あなたの学力・志望校・スケジュールを徹底分析したうえで、完全オーダーメイドのカリキュラムを設計。医進ラボ式勉強法の3ステップで、合格まで伴走します。",
-    features: [
-      "完全1対1の個別授業（週1〜複数回）",
-      "オンライン（Zoom）・対面どちらも選択可",
-      "全科目対応（英語・数学・理科・国語・社会）",
-      "現状分析・弱点の徹底洗い出し",
-      "完全オーダーメイドカリキュラム設計",
-      "志望校別の過去問演習・傾向分析",
-      "模試の結果分析と対策フィードバック",
-      "毎回の授業後レポート・質問対応",
-    ],
-    targetStudents: [
-      "今年度・来年度の受験を目指している方",
-      "苦手科目を集中的に克服したい方",
-      "大手予備校では物足りないと感じている方",
-      "地方在住でオンライン受講を希望する方",
-      "首都圏で対面指導を希望する方",
-    ],
-    note: "まずは無料相談で現状をお聞かせください。最適なカリキュラムをご提案します。",
-  },
-  {
-    id: "essay",
-    title: "小論文特訓コース",
-    subtitle: "Essay Intensive",
-    badge: "オプション",
-    badgeHighlight: false,
-    description: "医学部入試で年々重視されている小論文・総合問題に特化したコースです。医療倫理・時事問題・論述構成力を体系的にトレーニングします。個別指導コースとの併用もおすすめです。オンライン・対面どちらでも受講いただけます。",
-    features: [
-      "オンライン・対面どちらも選択可",
-      "医療系テーマに特化した論文指導",
-      "構成力・論理展開力のトレーニング",
-      "最新時事・医療倫理問題の解説",
-      "過去問（志望校別）の演習と添削",
-      "添削済み答案の詳細フィードバック",
-    ],
-    targetStudents: [
-      "小論文で差をつけたい方",
-      "医療倫理・時事問題の知識を深めたい方",
-      "論理的な文章を書くのが苦手な方",
-    ],
-    note: "個別指導コースとの併用で、筆記・論述の両方を強化できます。",
-  },
-  {
-    id: "interview",
-    title: "面接対策コース",
-    subtitle: "Interview Prep",
-    badge: "オプション",
-    badgeHighlight: false,
-    description: "医学部面接を実際に経験した現役医学生が、面接の本質から指導します。志望動機の深掘りから実践的な模擬面接まで徹底サポート。オンライン・対面どちらにも対応しています。",
-    features: [
-      "オンライン・対面どちらも選択可",
-      "現役医学生による模擬面接",
-      "大学別の面接傾向と頻出テーマ分析",
-      "志望動機・自己PRの磨き込み",
-      "医療問題・倫理問題への答え方指導",
-      "フィードバック資料の提供",
-    ],
-    targetStudents: [
-      "面接に強い苦手意識がある方",
-      "志望動機を上手く言語化できない方",
-      "MMI形式の面接がある大学を受験する方",
-    ],
-    note: "受験直前の集中特訓も承ります。スポット受講も可能です。",
-  },
-];
 
 export default function CoursesPage() {
   return (
