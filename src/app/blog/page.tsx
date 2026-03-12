@@ -17,7 +17,7 @@ export default function BlogPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Blog
           </p>
-          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             ブログ・お知らせ
           </h1>
           <p className="text-white/60 mt-4 text-base">

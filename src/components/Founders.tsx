@@ -72,7 +72,7 @@ export default function Founders() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Our Story
           </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             医進ラボについて
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto text-base leading-relaxed">
@@ -94,7 +94,7 @@ export default function Founders() {
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 A
             </div>
-            <h3 className="font-klee text-2xl font-semibold text-white mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3">
               塾なしで<span style={{ color: "#C9A84C" }}>慶應医学部特待</span>合格
             </h3>
             <p className="text-white/50 text-sm mb-1">慶應義塾大学医学部（特待生）</p>
@@ -118,7 +118,7 @@ export default function Founders() {
               style={{ backgroundColor: "#C9A84C20", color: "#C9A84C", border: "1px solid #C9A84C50" }}>
               講師 B
             </div>
-            <h3 className="font-klee text-2xl font-semibold text-white mb-3">
+            <h3 className="text-2xl font-bold text-white mb-3">
               <span style={{ color: "#C9A84C" }}>私立医学部全勝</span>・慶應医学部合格
             </h3>
             <p className="text-white/50 text-sm mb-1">慶應義塾大学医学部</p>
@@ -138,7 +138,7 @@ export default function Founders() {
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
               Why We Started
             </p>
-            <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               医進ラボが生まれた理由
             </h3>
             <p className="text-white/60 max-w-2xl mx-auto text-sm leading-relaxed">
@@ -191,7 +191,7 @@ export default function Founders() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#C9A84C" }}>
             Our Philosophy
           </p>
-          <h3 className="font-playfair text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-tight">
             医学部合格は、<span style={{ color: "#C9A84C" }}>才能ではなく</span><br />
             「正しい方法・戦略」と「合格への熱意」で掴み取るもの。
           </h3>

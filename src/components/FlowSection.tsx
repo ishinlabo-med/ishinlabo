@@ -65,7 +65,7 @@ export default function FlowSection() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             How It Works
           </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
             入塾までの流れ
           </h2>
           <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: "#6B6560" }}>
@@ -97,7 +97,7 @@ export default function FlowSection() {
                     {step.icon}
                   </div>
                   <span
-                    className="font-playfair text-4xl font-bold"
+                    className="text-4xl font-bold"
                     style={{ color: "#C9A84C20" }}
                   >
                     {step.number}

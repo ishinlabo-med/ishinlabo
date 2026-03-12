@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <span className="font-playfair text-2xl font-bold" style={{ color: "#C9A84C" }}>
+              <span className="text-2xl font-black" style={{ color: "#C9A84C" }}>
                 医進ラボ
               </span>
             </Link>

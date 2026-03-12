@@ -30,7 +30,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="font-playfair text-2xl font-bold" style={{ color: "#C9A84C" }}>
+            <span className="text-2xl font-black" style={{ color: "#C9A84C" }}>
               医進ラボ
             </span>
             <span className="text-xs text-white/50 hidden sm:block tracking-widest uppercase">

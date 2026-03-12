@@ -11,7 +11,7 @@ export default function LegalPageLayout({ title, content }: Props) {
     <>
       <div className="py-16 md:py-24" style={{ backgroundColor: "#0A1628" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-playfair text-3xl sm:text-4xl font-bold text-white">{title}</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white">{title}</h1>
         </div>
       </div>
 

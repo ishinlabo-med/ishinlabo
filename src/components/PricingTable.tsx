@@ -11,7 +11,7 @@ export default function PricingTable() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Pricing
           </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
             料金プラン
           </h2>
           <p className="text-sm" style={{ color: "#6B6560" }}>
@@ -40,7 +40,7 @@ export default function PricingTable() {
                   {plan.name}
                 </h3>
                 <div className="mb-3 flex items-baseline gap-1">
-                  <span className="font-playfair text-3xl font-bold" style={{ color: plan.highlighted ? "#C9A84C" : "#0A1628" }}>
+                  <span className="text-3xl font-black" style={{ color: plan.highlighted ? "#C9A84C" : "#0A1628" }}>
                     {plan.price}
                   </span>
                   <span className="text-sm" style={{ color: "#6B6560" }}>{plan.unit}</span>

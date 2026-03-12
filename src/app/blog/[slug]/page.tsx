@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: Props) {
               ))}
             </div>
           )}
-          <h1 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug mb-4">
             {post.title}
           </h1>
           <time className="text-sm" style={{ color: "#ffffff60" }}>
@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
           <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "#0A1628" }}>
-            <h3 className="font-playfair text-xl font-bold text-white mb-3">
+            <h3 className="text-xl font-bold text-white mb-3">
               医学部合格を目指すなら、まずは無料相談へ
             </h3>
             <p className="text-white/60 text-sm mb-6">

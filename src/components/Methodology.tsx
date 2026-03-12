@@ -44,7 +44,7 @@ const steps = [
 ];
 
 export default function Methodology() {
-  const flatlay = findImage("study-flatlay");
+  const flatlay = findImage("method-tutoring") || findImage("study-flatlay");
 
   return (
     <section className="section-padding" style={{ backgroundColor: "#F8F7F4" }}>
@@ -55,7 +55,7 @@ export default function Methodology() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Our Method
           </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
             医進ラボ式勉強法
           </h2>
           <p className="text-sm max-w-2xl mx-auto leading-relaxed" style={{ color: "#6B6560" }}>
@@ -94,7 +94,7 @@ export default function Methodology() {
                   </p>
                 </div>
                 <div className="hidden md:block flex-shrink-0 self-center">
-                  <p className="font-playfair text-5xl font-bold opacity-10" style={{ color: "#C9A84C" }}>
+                  <p className="text-5xl font-bold opacity-10" style={{ color: "#C9A84C" }}>
                     {step.number}
                   </p>
                 </div>
@@ -118,7 +118,7 @@ export default function Methodology() {
                   className="absolute bottom-0 left-0 right-0 px-6 py-4"
                   style={{ background: "linear-gradient(to top, rgba(10,22,40,0.85) 0%, transparent 100%)" }}
                 >
-                  <p className="text-white text-sm font-semibold">実際の受験生が使う参考書・ノートと同じ目線で指導</p>
+                  <p className="text-white text-sm font-semibold">現役医学生による完全マンツーマン指導</p>
                   <p className="text-white/60 text-xs mt-0.5">受験の最前線にいる現役医学生だからこそ伝えられる勉強法</p>
                 </div>
               </div>

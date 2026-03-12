@@ -17,7 +17,7 @@ export default function CoursesPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Our Courses
           </p>
-          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             コース・料金
           </h1>
           <p className="text-white/60 text-base max-w-xl mx-auto mb-8">
@@ -61,7 +61,7 @@ export default function CoursesPage() {
                         </span>
                       )}
                     </div>
-                    <h2 className="font-playfair text-3xl font-bold mb-5" style={{ color: "#0A1628" }}>
+                    <h2 className="text-3xl font-bold mb-5" style={{ color: "#0A1628" }}>
                       {course.title}
                     </h2>
                     <p className="text-base leading-relaxed mb-6" style={{ color: "#6B6560" }}>
@@ -119,7 +119,7 @@ export default function CoursesPage() {
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-playfair text-3xl font-bold" style={{ color: "#0A1628" }}>よくある質問</h2>
+            <h2 className="text-3xl font-bold" style={{ color: "#0A1628" }}>よくある質問</h2>
           </div>
           <div className="space-y-6">
             {[

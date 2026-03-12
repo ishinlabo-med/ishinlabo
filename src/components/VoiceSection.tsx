@@ -37,7 +37,7 @@ export default function VoiceSection() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Student Voices
           </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: "#0A1628" }}>
             受講生の声
           </h2>
           <p className="text-sm max-w-xl mx-auto leading-relaxed" style={{ color: "#6B6560" }}>
@@ -54,7 +54,7 @@ export default function VoiceSection() {
             >
               {/* Quote mark */}
               <div
-                className="font-playfair text-6xl leading-none absolute top-4 left-6 opacity-10 select-none"
+                className="text-6xl leading-none absolute top-4 left-6 opacity-10 select-none"
                 style={{ color: "#C9A84C" }}
               >
                 "

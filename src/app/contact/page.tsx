@@ -59,7 +59,7 @@ export default function ContactPage() {
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
             Contact
           </p>
-          <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             無料相談・お問い合わせ
           </h1>
           <p className="text-white/60 text-base max-w-xl mx-auto mb-8 leading-relaxed">
@@ -81,7 +81,7 @@ export default function ContactPage() {
             <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>
               How to Contact
             </p>
-            <h2 className="font-playfair text-2xl md:text-3xl font-bold" style={{ color: "#0A1628" }}>
+            <h2 className="text-2xl md:text-3xl font-bold" style={{ color: "#0A1628" }}>
               相談方法を選ぶ
             </h2>
           </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                   >
                     {method.icon}
                   </div>
-                  <h3 className="font-playfair text-xl font-bold mb-1" style={{ color: "#0A1628" }}>{method.title}</h3>
+                  <h3 className="text-xl font-bold mb-1" style={{ color: "#0A1628" }}>{method.title}</h3>
                   <p className="text-xs mb-4" style={{ color: "#6B6560" }}>{method.subtitle}</p>
                   <p className="text-sm leading-relaxed mb-5" style={{ color: "#6B6560" }}>{method.description}</p>
                   <ul className="space-y-2 mb-6">
@@ -163,7 +163,7 @@ export default function ContactPage() {
           {/* Form */}
           <div id="form">
             <div className="text-center mb-8">
-              <h2 className="font-playfair text-2xl font-bold" style={{ color: "#0A1628" }}>フォームで送る</h2>
+              <h2 className="text-2xl font-bold" style={{ color: "#0A1628" }}>フォームで送る</h2>
               <p className="text-sm mt-2" style={{ color: "#6B6560" }}>詳細をまとめてお送りいただく場合はこちら</p>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-sm" style={{ border: "1px solid #E2DDD4" }}>

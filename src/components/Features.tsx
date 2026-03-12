@@ -79,7 +79,7 @@ export default function Features() {
             Why Ishin Labo
           </p>
           <h2
-            className="font-playfair text-3xl md:text-4xl font-bold"
+            className="text-3xl md:text-4xl font-bold"
             style={{ color: "#0A1628" }}
           >
             医進ラボが選ばれる理由
@@ -94,7 +94,7 @@ export default function Features() {
               style={{ border: "1px solid #E2DDD4" }}
             >
               <div
-                className="absolute top-6 right-6 font-playfair text-5xl font-bold opacity-10"
+                className="absolute top-6 right-6 text-5xl font-bold opacity-10"
                 style={{ color: "#C9A84C" }}
               >
                 {String(idx + 1).padStart(2, "0")}
