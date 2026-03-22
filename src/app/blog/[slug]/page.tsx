@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import BlogCtaBanner from "@/components/BlogCtaBanner";
+import RelatedArticles from "@/components/RelatedArticles";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -19,6 +21,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://ishinlabo.com/blog/${slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://ishinlabo.com/blog/${slug}`,
+      type: "article",
+      publishedTime: post.date || undefined,
+      tags: post.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
   };
 }
 
@@ -26,6 +44,7 @@ export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+  const allPosts = getAllPosts();
 
   const formatted = post.date
     ? new Date(post.date).toLocaleDateString("ja-JP", {
@@ -35,8 +54,54 @@ export default async function BlogPostPage({ params }: Props) {
       })
     : "";
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "ホーム", item: "https://ishinlabo.com" },
+      { "@type": "ListItem", position: 2, name: "ブログ", item: "https://ishinlabo.com/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://ishinlabo.com/blog/${slug}` },
+    ],
+  };
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: `https://ishinlabo.com/blog/${slug}`,
+    datePublished: post.date || undefined,
+    dateModified: post.date || undefined,
+    author: {
+      "@type": "Organization",
+      name: "医進ラボ",
+      url: "https://ishinlabo.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "医進ラボ",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ishinlabo.com/icon.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://ishinlabo.com/blog/${slug}`,
+    },
+    keywords: post.tags.join(", "),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="py-16 md:py-20" style={{ backgroundColor: "#0A1628" }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
@@ -73,23 +138,12 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="blog-content">
             <MDXRemote source={post.content} />
           </div>
+          <BlogCtaBanner variant="inline" />
         </div>
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-          <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "#0A1628" }}>
-            <h3 className="text-xl font-bold text-white mb-3">
-              医学部合格を目指すなら、まずは無料相談へ
-            </h3>
-            <p className="text-white/60 text-sm mb-6">
-              現役医学生・医師があなたの状況をヒアリングし、最適な学習プランをご提案します。
-            </p>
-            <Link
-              href="/contact"
-              className="btn-gold inline-flex items-center gap-2 px-8 py-3 font-bold rounded-lg text-sm"
-            >
-              無料相談を申し込む →
-            </Link>
-          </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+          <BlogCtaBanner variant="bottom" />
+          <RelatedArticles currentSlug={slug} posts={allPosts} />
         </div>
       </article>
     </>

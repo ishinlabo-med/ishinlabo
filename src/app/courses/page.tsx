@@ -7,11 +7,47 @@ import courseDetails from "@/content/courses.json";
 export const metadata: Metadata = {
   title: "コース・料金",
   description: "医進ラボのコース一覧と料金表。個別指導コースをメインに、小論文・面接対策も対応。オンライン・対面両対応の医学部受験専門個別指導塾。",
+  alternates: {
+    canonical: "https://ishinlabo.com/courses",
+  },
+  openGraph: {
+    title: "コース・料金 | 医進ラボ",
+    description: "医進ラボのコース一覧と料金表。個別指導コースをメインに、小論文・面接対策も対応。オンライン・対面両対応の医学部受験専門個別指導塾。",
+    url: "https://ishinlabo.com/courses",
+  },
+};
+
+const coursesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "医進ラボ コース一覧",
+  url: "https://ishinlabo.com/courses",
+  itemListElement: courseDetails.map((course, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    item: {
+      "@type": "Course",
+      name: course.title,
+      description: course.description,
+      url: `https://ishinlabo.com/courses#${course.id}`,
+      provider: {
+        "@type": "Organization",
+        name: "医進ラボ",
+        url: "https://ishinlabo.com",
+      },
+      courseMode: ["online", "onsite"],
+      inLanguage: "ja",
+    },
+  })),
 };
 
 export default function CoursesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(coursesJsonLd) }}
+      />
       <div className="py-16 md:py-24" style={{ backgroundColor: "#0A1628" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: "#C9A84C" }}>

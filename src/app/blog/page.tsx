@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog";
 import BlogCard from "@/components/BlogCard";
+import ConsultationBanner from "@/components/ConsultationBanner";
 
 export const metadata: Metadata = {
   title: "ブログ・お知らせ",
-  description: "医進ラボのブログ。医学部受験の勉強法、小論文・面接対策、最新情報などを現役医学生・医師が発信します。",
+  description: "医進ラボのブログ。医学部受験の勉強法、小論文・面接対策、浪人戦略、私立医学部情報などを現役医学生・医師が発信します。",
+  alternates: {
+    canonical: "https://ishinlabo.com/blog",
+  },
 };
 
 export default function BlogPage() {
@@ -41,6 +45,8 @@ export default function BlogPage() {
           )}
         </div>
       </section>
+
+      <ConsultationBanner />
     </>
   );
 }
